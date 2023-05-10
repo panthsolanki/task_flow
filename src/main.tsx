@@ -13,6 +13,10 @@ const theme = createTheme({
       main: '#595959',
     }
   },
+  typography: {
+    "fontFamily": `"SF Pro", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif`,
+    "fontSize": 14,
+  }
 });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

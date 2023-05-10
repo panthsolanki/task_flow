@@ -4,14 +4,14 @@
 .container {
   @include flex-row;
   border: 2px solid $border-color;
+  flex: 1;
 }
 
 .chart-container {
   flex: 1;
-  // border-right: 1px solid $border-color;
 }
 
 .setting-container {
   flex: 2;
-  // border-left: 1px solid $border-color;
+  border-left: 2px solid $border-color;
 }

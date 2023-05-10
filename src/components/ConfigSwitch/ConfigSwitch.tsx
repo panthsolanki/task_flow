@@ -13,15 +13,13 @@ const ConfigSwitch: FC<ConfigSwitchProps> = (props: ConfigSwitchProps) => {
   const { flowNodes, toggleBuildConfigNode } = useBuildConfigReducer();
 
   const flowNode = flowNodes.find(node => node.code === code);
-  console.log("flowNode", flowNode);
-
   const onToggleChange = (code: string = "", isActive: boolean = false): void => {
-    console.log("onToggleChange", code, isActive);
     toggleBuildConfigNode(code, isActive);
   }
 
   return <FormControlLabel
     key={key}
+    className="switch-label"
     control={
       <Switch
         size="medium"
@@ -32,6 +30,14 @@ const ConfigSwitch: FC<ConfigSwitchProps> = (props: ConfigSwitchProps) => {
       />
     }
     label={label}
+    sx={{
+      margin: 0,
+      paddingTop: 1,
+      paddingBottom: 1,
+      borderBottom: 2,
+      borderColor: '#ECEEF2',
+      color: '#262626',
+    }}
   />
 }
 

@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.switch-label{
+  @include normal-font;
+  padding: 1em 0;
+  border-bottom: 2px solid $border-color;
+}
