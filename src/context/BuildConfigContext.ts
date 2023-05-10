@@ -18,12 +18,17 @@ export const useBuildConfigContext = (initState: appState) => {
     payload: node
   }), [])
 
+  const deleteBuildConfigNode = useCallback((node: subTask) => dispatch({
+    type: actionTypes.DELETE_SUBTASK_NODE,
+    payload: node
+  }), [])
+
   const toggleBuildConfigNode = useCallback((code: string, isActive: boolean) => dispatch({
     type: actionTypes.TOGGLE_FLOW_NODE,
     payload: { code, isActive }
   }), [])
 
-  return { state, addBuildConfigNode, toggleBuildConfigNode }
+  return { state, addBuildConfigNode, deleteBuildConfigNode, toggleBuildConfigNode }
 }
 
 type UseBuildConfigContextType = ReturnType<typeof useBuildConfigContext>
@@ -31,6 +36,7 @@ type UseBuildConfigContextType = ReturnType<typeof useBuildConfigContext>
 const initContextState: UseBuildConfigContextType = {
   state: initState,
   addBuildConfigNode: () => { },
+  deleteBuildConfigNode: () => { },
   toggleBuildConfigNode: () => { },
 }
 

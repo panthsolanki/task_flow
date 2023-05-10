@@ -39,8 +39,8 @@ export const initState: appState = {
 
 export const defaultFlowSubTask: subTask = {
   id: 0,
-  name: "defaultTask",
-  isActive: false,
+  name: "untitled script",
+  isActive: true,
   parentId: 0,
 }
 
@@ -56,6 +56,7 @@ export const actionTypes = {
   ADD_FLOW_NODE: "ADD_FLOW_NODE",
   TOGGLE_FLOW_NODE: "TOGGLE_FLOW_NODE",
   GET_FLOW_NODES: "GET_FLOW_NODES",
+  DELETE_SUBTASK_NODE: "DELETE_SUBTASK_NODE",
 } as const;
 
 export const flowToggleArr = [{

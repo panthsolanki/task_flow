@@ -14,12 +14,13 @@ type subTask = {
 }
 
 type AddFlowNodeAction = { type: 'ADD_FLOW_NODE'; payload: subTask };
+type DeleteSubtaskNode = { type: 'DELETE_SUBTASK_NODE'; payload: subTask };
 type ToggleFlowNodeAction = {
   type: 'TOGGLE_FLOW_NODE', payload: { code: string, isActive: boolean }
 };
 type GetFlowNodesAction = { type: 'GET_FLOW_NODES' };
 
-type AppAction = AddFlowNodeAction | ToggleFlowNodeAction | GetFlowNodesAction;
+type AppAction = AddFlowNodeAction | DeleteSubtaskNode | ToggleFlowNodeAction | GetFlowNodesAction;
 
 type appState = {
   flowNodes: flowNode[]

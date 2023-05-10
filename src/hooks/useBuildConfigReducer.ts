@@ -7,12 +7,14 @@ export const useBuildConfigReducer = () => {
       flowNodes
     },
     addBuildConfigNode,
+    deleteBuildConfigNode,
     toggleBuildConfigNode,
   } = useContext(BuildConfigContext);
 
   return {
     flowNodes,
     addBuildConfigNode,
+    deleteBuildConfigNode,
     toggleBuildConfigNode,
   }
 }
