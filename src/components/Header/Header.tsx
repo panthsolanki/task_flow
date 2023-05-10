@@ -4,13 +4,25 @@ import './Header.scss';
 const Header = () => {
 
   return (<div className='header'>
-    <h1 className='header-title'>Header</h1>
+    <h1 className='header-title'>Build Config</h1>
     <div className='button-container'>
-      <Button variant="contained" color="primary" className="button">
-        Primary
+      <Button
+        disableFocusRipple={false}
+        disableRipple={false}
+        disableElevation={false}
+        variant="outlined"
+        color="secondary"
+        className="button secondary-button">
+        <span className="btn-cta secondary-btn-cta">Cancel</span>
       </Button>
-      <Button variant="outlined" color="secondary" className="button">
-        secondary
+      <Button
+        disableFocusRipple={false}
+        disableRipple={false}
+        disableElevation={false}
+        variant="contained"
+        color="primary"
+        className="button">
+        <span className="btn-cta primary-btn-cta">Save</span>
       </Button>
     </div>
 
