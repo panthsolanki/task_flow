@@ -27,6 +27,9 @@
   margin: 1em;
 }
 
-.flow-icon-node {
+.flow-node.flow-icon-node {
   margin: 0;
+  min-width: 180px;
+  @include flex-row;
+  justify-content: center;
 }

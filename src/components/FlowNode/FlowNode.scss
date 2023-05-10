@@ -1,0 +1,53 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.flow-node-container {
+  background-color: #FFFFFF;
+  border: 2px solid $border-color;
+  border-radius: 8px;
+  width: 180px;
+  padding: 12px;
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
+}
+.flow-node-container.not-active {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #F9F9FB;
+  &:hover {
+    background: linear-gradient(0deg, rgba(4, 150, 255, 0.05), rgba(4, 150, 255, 0.05)), #FFFFFF;
+    border-color: $primary-color;
+  }
+}
+
+.can-delete {
+  position: relative;
+  
+  .delete-icon-container {
+    display: none;
+  }
+  &:hover {
+    background: linear-gradient(0deg, rgba(4, 150, 255, 0.05), rgba(4, 150, 255, 0.05)), #FFFFFF;
+    border-color: $primary-color;
+
+    .delete-icon-container {
+      display: block;
+      position: absolute;
+      top: -15px;
+      right: -10px;
+      cursor: pointer;
+    }
+  }
+  
+}
+
+.flow-node-title {
+  @include normal-font;
+  cursor: default;
+}
+
+.flow-node-title.not-active {
+  padding-left: 10px;
+  cursor: pointer;
+}

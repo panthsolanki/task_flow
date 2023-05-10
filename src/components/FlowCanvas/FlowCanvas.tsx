@@ -1,26 +1,18 @@
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
-import ControlPointRoundedIcon from '@mui/icons-material/ControlPointRounded';
-import Button from '@mui/material/Button/Button';
 import IconButton from '@mui/material/IconButton/IconButton';
 import { FC, useMemo } from 'react';
 import { defaultFlowSubTask } from '../../constants/buildConfig';
 import { useBuildConfigReducer } from '../../hooks/useBuildConfigReducer';
+import FlowNode from '../FlowNode/FlowNode';
 import './FlowCanvas.scss';
 
 const FlowCanvas: FC = () => {
   const {
     flowNodes,
     addBuildConfigNode,
+    deleteBuildConfigNode,
     toggleBuildConfigNode,
   } = useBuildConfigReducer();
-
-  const styles = {
-    textTransform: 'capitalize',
-    backgroundColor: '#ffffff',
-    padding: 1,
-    margin: 1,
-    width: '100%',
-  }
 
   const isAllAdded = useMemo(() => {
     return flowNodes.filter(node => !node.isActive).length === 0;
@@ -49,27 +41,18 @@ const FlowCanvas: FC = () => {
               {!isAllAdded && <div className="flow-node">
               </div>}
               <div className="flow-node">
-                <Button
-                  disableFocusRipple={true}
-                  disableRipple={true}
-                  disableElevation={true}
-                  disableTouchRipple={true}
-                  variant="text"
-                  color="secondary"
-                  sx={{
-                    ...styles,
-                    color: "#262626",
-                  }}
-                >
-                  {subTask.name}
-                </Button>
+                <FlowNode
+                  node={subTask}
+                  showDelete={true}
+                  deleteNode={() => deleteBuildConfigNode(subTask)}
+                />
               </div>
             </div>)
         })
       }
       <div key={`{${node.id}_new}`} className="flow-row">
         {!isAllAdded && <div className="flow-node"></div>}
-        <div className="flow-icon-node">
+        <div className="flow-node flow-icon-node">
           <IconButton
             disableFocusRipple={true}
             disableRipple={true}
@@ -98,36 +81,18 @@ const FlowCanvas: FC = () => {
                   {!isAllAdded && <div className="flow-node">
                   </div>}
                   <div className="flow-node">
-                    <Button
-                      // disabled={true}
-                      disableFocusRipple={true}
-                      disableRipple={true}
-                      disableElevation={true}
-                      disableTouchRipple={true}
-                      variant="text"
-                      color="secondary"
-                      sx={{
-                        ...styles,
-                        color: "#262626",
-                      }}
-                    >
-                      {node.name}
-                    </Button>
+                    <FlowNode
+                      node={node}
+                      showDelete={false}
+                    />
                   </div>
                 </>) : (<>
                   <div className="flow-node">
-                    <Button
-                      disableFocusRipple={true}
-                      disableRipple={true}
-                      disableElevation={true}
-                      disableTouchRipple={true}
-                      variant="text"
-                      startIcon={<ControlPointRoundedIcon />}
-                      sx={styles}
-                      onClick={() => toggleBuildConfigNode(node.code, !node.isActive)}
-                    >
-                      {node.name}
-                    </Button>
+                    <FlowNode
+                      node={node}
+                      addNode={() => toggleBuildConfigNode(node.code, !node.isActive)}
+                      showDelete={false}
+                    />
                   </div>
                   <div className="flow-node">
                   </div>
