@@ -1,11 +1,8 @@
 import { FC } from 'react';
+import BuildConfigContextProvider from '../../HOC/BuildConfigContextProvider';
 import FlowCanvas from '../../components/FlowCanvas/FlowCanvas';
 import FlowSetting from "../../components/FlowSetting/FlowSetting";
 import Header from "../../components/Header/Header";
-import { initState } from '../../constants/buildConfig';
-// import { BuildConfigProvider } from '../../context/BuildConfigContext';
-import BuildConfigContextProvider from '../../HOC/BuildConfigContextProvider';
-import buildConfigReducer from '../../reducers/buildConfigReducer';
 import "./BuildConfigPage.scss";
 
 const BuildConfigPage: FC = () => {

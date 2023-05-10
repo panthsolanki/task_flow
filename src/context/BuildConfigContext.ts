@@ -5,8 +5,6 @@ import {
 } from "react";
 import {
   actionTypes,
-  defaultConfigNode,
-  defaultFlowSubTask,
   initState,
 } from "../constants/buildConfig";
 import buildConfigReducer from "../reducers/buildConfigReducer";
@@ -33,7 +31,7 @@ type UseBuildConfigContextType = ReturnType<typeof useBuildConfigContext>
 const initContextState: UseBuildConfigContextType = {
   state: initState,
   addBuildConfigNode: () => { },
-  toggleBuildConfigNode: (code: string, isActive: boolean) => { },
+  toggleBuildConfigNode: () => { },
 }
 
 export const BuildConfigContext = createContext<UseBuildConfigContextType>(initContextState);
