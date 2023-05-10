@@ -1,0 +1,17 @@
+@import '../../styles/_variables';
+@import '../../styles/_mixins';
+
+.container {
+  @include flex-row;
+  border: 2px solid $border-color;
+}
+
+.chart-container {
+  flex: 1;
+  // border-right: 1px solid $border-color;
+}
+
+.setting-container {
+  flex: 2;
+  // border-left: 1px solid $border-color;
+}
