@@ -1,0 +1,28 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.flow-canvas {
+  @include flex-column;
+  flex-grow: 1;
+  background-image: url('../../assets/images/flowBackground.jpg');
+  background-repeat: repeat;
+  height: 100%;
+}
+.flow-title {
+  @include title-font;
+  color: $secondary-color;
+  align-self: center;
+  padding-top: 20px;
+}
+.flow-grid {
+  @include flex-column;
+}
+
+.flow-row {
+  @include flex-row;
+  justify-content: space-around;
+}
+
+.flow-node {
+  margin: 1em;
+}
